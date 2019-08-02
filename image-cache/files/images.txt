@@ -1,0 +1,8 @@
+204288
+6
+http://localhost:5000/images/xbox360.jpg
+http://localhost:5000/images/wii.jpg
+http://localhost:5000/images/xbox360.jpg
+http://localhost:5000/images/xbox360.jpg
+http://localhost:5000/images/controller.jpg
+http://localhost:5000/images/wii.jpg
