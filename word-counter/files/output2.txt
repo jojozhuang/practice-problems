@@ -1,0 +1,6 @@
+apple 1
+banana 1
+honey 7
+mango 1
+orange 1
+world 6
