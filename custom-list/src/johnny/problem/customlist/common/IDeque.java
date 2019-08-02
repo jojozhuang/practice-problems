@@ -8,12 +8,12 @@ public interface IDeque<E> {
     E pollLast();
     E peekFirst();
     E peekLast();
-    
-    // Queue methods 
+
+    // Queue methods
     boolean offer(E e);
     E poll();
     E peek();
-    
+
     // Stack methods
     void push(E e);
     E pop();
