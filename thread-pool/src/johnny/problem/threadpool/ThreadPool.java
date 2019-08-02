@@ -7,7 +7,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class ThreadPool {
     private BlockingQueue bq ;
-    private List<WorkerThread> threads;
+    private List<Worker> threads;
     private boolean isStopped;
     private int capacity;
 
@@ -17,10 +17,10 @@ public class ThreadPool {
         bq = new ArrayBlockingQueue(capacity);
         threads = new ArrayList<>();
         for (int i = 0; i < numOfThreads; i++){
-            threads.add(new WorkerThread(bq));
+            threads.add(new Worker(bq));
         }
-        for (WorkerThread thread : threads) {
-            thread.start();
+        for (Worker worker : threads) {
+            worker.start();
         }
     }
 
@@ -39,46 +39,8 @@ public class ThreadPool {
             e.printStackTrace();
         }
         this.isStopped = true;
-        for (WorkerThread thread : threads) {
+        for (Worker thread : threads) {
             thread.doStop();
-        }
-    }
-
-    class WorkerThread extends Thread {
-
-        private BlockingQueue<Runnable> bq;
-        private boolean isStopped;
-
-        public WorkerThread(BlockingQueue bq){
-            this.bq = bq;
-            this.isStopped = false;
-        }
-
-        public void run(){
-            while(!isStopped()){
-                try {
-                    Runnable runnable = bq.take();
-                    runnable.run();
-                } catch(Exception e){
-                    //log or otherwise report exception,
-                    //but keep worker thread alive.
-                }
-            }
-        }
-
-        public synchronized void doStop(){
-            if (!this.isInterrupted()) {
-                try {
-                    this.interrupt(); //break worker thread
-                } catch (SecurityException ignore) {
-                } finally {
-                }
-            }
-            isStopped = true;
-        }
-
-        public synchronized boolean isStopped(){
-            return isStopped;
         }
     }
 }
