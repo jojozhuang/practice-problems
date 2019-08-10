@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="934d449e-9d03-41f4-a4b5-fbcc6a1997ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/prefix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/johnny/problem/wordrank/Trie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/johnny/problem/wordrank/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/johnny/problem/wordrank/WordRank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/johnny/problem/wordrank/WordRankExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/johnny/problem/wordrank/WordRankTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../key-value-store/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../key-value-store/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +49,10 @@
     <session id="719837126">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordRank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="60">
               <caret line="5" selection-start-line="5" selection-end-line="18" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -100,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/Trie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="145" column="1" lean-forward="true" selection-start-line="7" selection-end-line="145" selection-end-column="1" />
+            <state relative-caret-position="2070">
+              <caret line="145" column="1" selection-start-line="7" selection-end-line="145" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordRankExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+            <state relative-caret-position="240">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -122,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/test/johnny/problem/wordrank/WordRankTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,7 +138,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Collections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
+            <state relative-caret-position="2055">
               <caret line="174" selection-start-line="174" selection-end-line="174" />
               <folding>
                 <element signature="e#7312#7313#0" expanded="true" />
@@ -151,11 +147,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/files/output.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -164,7 +160,7 @@
         <entry file="file://$PROJECT_DIR$/files/prefix.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-column="4" />
+              <caret selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -172,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/files/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="75">
+              <caret line="5" column="7" selection-end-line="5" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -208,12 +204,12 @@
         <option value="$PROJECT_DIR$/src/johnny/problem/wordrank/Word.java" />
         <option value="$PROJECT_DIR$/src/johnny/problem/wordrank/WordRank.java" />
         <option value="$PROJECT_DIR$/test/johnny/problem/wordrank/test/WordCounterTest.java" />
-        <option value="$PROJECT_DIR$/files/input.txt" />
         <option value="$PROJECT_DIR$/src/johnny/problem/wordrank/WordRank2.java" />
         <option value="$PROJECT_DIR$/src/johnny/problem/wordrank/WordRankExample2.java" />
         <option value="$PROJECT_DIR$/test/johnny/problem/wordrank/WordRankTest.java" />
         <option value="$PROJECT_DIR$/files/output.txt" />
         <option value="$PROJECT_DIR$/src/johnny/problem/wordrank/WordRankExample.java" />
+        <option value="$PROJECT_DIR$/files/input.txt" />
       </list>
     </option>
   </component>
@@ -228,8 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,10 +262,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565133164845" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565411972087" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -297,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WordRankTest">
+  <component name="RunManager" selected="Application.WordRankExample">
     <configuration name="WordRankExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="johnny.problem.wordrank.WordRankExample" />
       <module name="word-rank" />
@@ -356,13 +352,11 @@
       <item itemvalue="JUnit.WordCounterTest" />
       <item itemvalue="Application.WordRankExample" />
       <item itemvalue="JUnit.WordRankTest" />
-      <item itemvalue="Application.WordRankExample2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WordRankTest" />
         <item itemvalue="Application.WordRankExample" />
-        <item itemvalue="Application.WordRankExample2" />
+        <item itemvalue="JUnit.WordRankTest" />
         <item itemvalue="JUnit.WordCounterTest" />
       </list>
     </recent_temporary>
@@ -396,12 +390,15 @@
     <history-entry file="WordRankTest - 2019.08.06 at 16h 05m 36s.xml">
       <configuration name="WordRankTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WordRankTest - 2019.08.09 at 21h 39m 29s.xml">
+      <configuration name="WordRankTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -410,7 +407,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32961586" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32961586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39900866" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -451,16 +448,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/output1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordCounter.java" />
+    <entry file="file://$PROJECT_DIR$/files/output1.txt" />
     <entry file="file://$PROJECT_DIR$/word-rank.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -468,88 +457,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordCounter2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="77" column="1" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/johnny/problem/wordrank/test/WordCounterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
-          <folding>
-            <element signature="e#7312#7313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/wordrank.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/prefix.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordRankExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="38" column="14" selection-start-line="19" selection-start-column="8" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordCounter2.java" />
+    <entry file="file://$PROJECT_DIR$/test/johnny/problem/wordrank/test/WordCounterTest.java" />
+    <entry file="file://$PROJECT_DIR$/files/wordrank.txt" />
     <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordRank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="49" column="9" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="49" selection-end-column="9" />
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="18" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/output.txt">
+    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/Trie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/johnny/problem/wordrank/WordRankTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="2070">
+          <caret line="145" column="1" selection-start-line="7" selection-end-line="145" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -563,30 +487,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/Trie.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="145" column="1" lean-forward="true" selection-start-line="7" selection-end-line="145" selection-end-column="1" />
+        <state relative-caret-position="2055">
+          <caret line="174" selection-start-line="174" selection-end-line="174" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#7312#7313#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordRank.java">
+    <entry file="file://$PROJECT_DIR$/files/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="5" column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/johnny/problem/wordrank/WordRankExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+        <state relative-caret-position="240">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/johnny/problem/wordrank/WordRankTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/prefix.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
