@@ -8,7 +8,7 @@ public class ArrayListTest {
     
     @Test
     public void test() {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         assertEquals(0, list.size());
         list.add(1);
         list.add(2);
@@ -36,7 +36,7 @@ public class ArrayListTest {
     
     @Test(expected=IndexOutOfBoundsException.class)
     public void testLowerBound() {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -47,7 +47,7 @@ public class ArrayListTest {
     
     @Test(expected=IndexOutOfBoundsException.class)
     public void testHigherBound() {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
         list.add(3);

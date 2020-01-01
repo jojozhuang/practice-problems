@@ -8,7 +8,7 @@ public class LinkedListTest {
     
     @Test
     public void testStack() {
-        IStack<Integer> stack = new LinkedList<Integer>();
+        IStack<Integer> stack = new LinkedList<>();
         assertEquals(true, stack.isEmpty());
         stack.push(1);
         stack.push(2);
@@ -30,7 +30,7 @@ public class LinkedListTest {
     
     @Test
     public void testQueue() {
-        IQueue<Integer> queue = new LinkedList<Integer>();
+        IQueue<Integer> queue = new LinkedList<>();
         assertEquals(true, queue.isEmpty());
         queue.offer(1);
         queue.offer(2);
@@ -52,7 +52,7 @@ public class LinkedListTest {
     
     @Test
     public void testDeque() {
-        IDeque<Integer> deque = new LinkedList<Integer>();
+        IDeque<Integer> deque = new LinkedList<>();
         assertEquals(true, deque.isEmpty());
         deque.offerLast(1);
         deque.offerLast(2);

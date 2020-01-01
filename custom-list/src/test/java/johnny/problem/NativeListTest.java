@@ -12,7 +12,7 @@ public class NativeListTest {
     
     @Test
     public void testStack() {
-        LinkedList<Integer> stack = new LinkedList<Integer>();
+        LinkedList<Integer> stack = new LinkedList<>();
         assertEquals(true, stack.isEmpty());
         stack.push(1);
         stack.push(2);
@@ -34,7 +34,7 @@ public class NativeListTest {
     
     @Test
     public void testQueue() {
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
         assertEquals(true, queue.isEmpty());
         queue.offer(1);
         queue.offer(2);
@@ -56,7 +56,7 @@ public class NativeListTest {
     
     @Test
     public void testDeque() {
-        Deque<Integer> deque = new LinkedList<Integer>();
+        Deque<Integer> deque = new LinkedList<>();
         assertEquals(true, deque.isEmpty());
         deque.offerLast(1);
         deque.offerLast(2);
