@@ -27,5 +27,4 @@ public class RandomIdGeneratorTest {
             assertEquals(8, base36ID.length());
         }
     }
-
 }
