@@ -10,8 +10,7 @@ import java.util.Scanner;
 public class ImageCacheExample {
     private static final String INPUT_FILE = "images.txt";
 
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args) {
         int capacity = 0;
         int quantity = 0;
         List<String> urls = new ArrayList<>();
@@ -38,6 +37,5 @@ public class ImageCacheExample {
             e.printStackTrace();
         }
         ic.print();
-
     }
 }

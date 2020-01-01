@@ -1,6 +1,5 @@
 package johnny.problem;
 
-
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -44,7 +43,7 @@ public class ImageCache {
         in.close();
 
         byte[] response = out.toByteArray();
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         return response;
     }
 
