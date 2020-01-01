@@ -1,3 +1,0 @@
-hello 3
-howdy 1
-world 2
