@@ -16,6 +16,7 @@
         <module>thread-pool</module>
         <module>word-counter</module>
         <module>word-rank</module>
+        <module>workspace-demo</module>
     </modules>
     <packaging>pom</packaging>
     <dependencies>
