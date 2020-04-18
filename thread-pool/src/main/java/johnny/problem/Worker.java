@@ -3,11 +3,12 @@ package johnny.problem;
 import java.util.concurrent.BlockingQueue;
 
 public class Worker extends Thread {
-
-    private BlockingQueue<Runnable> bq;
+    private int id;
+    private BlockingQueue<Task> bq;
     private boolean isStopped;
 
-    public Worker(BlockingQueue bq){
+    public Worker(int id, BlockingQueue bq) {
+        this.id = id;
         this.bq = bq;
         this.isStopped = false;
     }
@@ -15,8 +16,9 @@ public class Worker extends Thread {
     public void run(){
         while(!isStopped()){
             try {
-                Runnable runnable = bq.take();
-                runnable.run();
+                Task task = bq.take();
+                System.out.println("Worker #" + id + " is working on the task: " + task.getName());
+                task.run();
             } catch(Exception e){
                 //log or otherwise report exception,
                 //but keep worker thread alive.

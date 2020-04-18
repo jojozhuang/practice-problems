@@ -11,20 +11,21 @@ public class ThreadPool {
     private boolean isStopped;
     private int capacity;
 
-    public ThreadPool(int numOfThreads){
+    public ThreadPool(int numOfThreads) {
         isStopped = false;
         capacity = 100;
         bq = new ArrayBlockingQueue(capacity);
         threads = new ArrayList<>();
-        for (int i = 0; i < numOfThreads; i++){
-            threads.add(new Worker(bq));
+        for (int i = 0; i < numOfThreads; i++) {
+            threads.add(new Worker(i + 1, bq));
         }
         for (Worker worker : threads) {
             worker.start();
         }
+        System.out.println("Thread pool is ready...");
     }
 
-    public synchronized void execute(Runnable task) throws Exception{
+    public synchronized void execute(Runnable task) throws Exception {
         if (this.isStopped) {
             throw new IllegalStateException("ThreadPool is stopped");
         }
@@ -32,7 +33,7 @@ public class ThreadPool {
         this.bq.put(task);
     }
 
-    public synchronized void shutdown(){
+    public synchronized void shutdown() {
         try {
             Thread.sleep(20000);
         } catch (InterruptedException e) {
