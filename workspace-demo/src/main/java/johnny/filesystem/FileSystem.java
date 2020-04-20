@@ -3,9 +3,11 @@ package johnny.filesystem;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FileSystem {
     File root;
+    //private SizeFilterPredicate sfp;
 
     public FileSystem() {
         this.root = new File("");
@@ -62,7 +64,7 @@ public class FileSystem {
     }
 
     // find files with the given directory
-    public List<String> ls(String path) {
+    public List<String> ls(String path, Predicate<Integer> predicate) {
         List<String> list = new ArrayList<>();
         String[] dirs = path.split("/");
         File node = root;
@@ -73,7 +75,9 @@ public class FileSystem {
         }
 
         for (String str : node.children.keySet()) {
-            list.add(str);
+            if (predicate.test(node.children.get(str).size)) {
+                list.add(str);
+            }
         }
 
         Collections.sort(list);
