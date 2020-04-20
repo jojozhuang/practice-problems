@@ -8,6 +8,8 @@ public class File {
     public boolean isFile;
     public Map<String, File> children;
     public String content;
+    public int size;
+    public int time;
 
     public File() {
         this.name = "";

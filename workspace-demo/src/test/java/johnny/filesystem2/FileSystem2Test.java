@@ -1,4 +1,4 @@
-package johnny.filesystem;
+package johnny.filesystem2;
 
 import org.junit.Test;
 
@@ -6,11 +6,11 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class FileSystemTest {
+public class FileSystem2Test {
 
     @Test
     public void test() {
-        System.out.println("FileSystem");
+        System.out.println("FileSystem2");
         FileSystem instance = new FileSystem();
 
         List<String> result1 = ListUtil.buildList(new String[] {});
@@ -24,6 +24,7 @@ public class FileSystemTest {
     }
 
     @Test
+
     public void test2() {
         System.out.println("FileSystem");
         FileSystem instance = new FileSystem();
