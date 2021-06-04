@@ -5,7 +5,7 @@ public class SingleDimension {
   private String key;
   private Object value;
 
-  SingleDimension(AccessDimension accessDimension, String key, Object value) {
+  public SingleDimension(AccessDimension accessDimension, String key, Object value) {
     this.accessDimension = accessDimension;
     this.key = key;
     this.value = value;

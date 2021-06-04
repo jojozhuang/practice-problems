@@ -4,7 +4,7 @@ public class SimpleCondition {
   private AccessDimension accessDimension;
   private String key;
 
-  SimpleCondition(AccessDimension accessDimension, String key) {
+  public SimpleCondition(AccessDimension accessDimension, String key) {
     this.accessDimension = accessDimension;
     this.key = key;
   }

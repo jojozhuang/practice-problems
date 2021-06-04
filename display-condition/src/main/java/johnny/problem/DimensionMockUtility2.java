@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DimensionMockUtility {
+public class DimensionMockUtility2 {
   public static Map<String, Object> getPositiveDimension(AccessDimension ad, String key) {
     return getPositiveDimensionsForAnd(ad, List.of(key));
   }
@@ -77,14 +77,15 @@ public class DimensionMockUtility {
     return new SimpleCondition(accessDimension, key);
   }
 
-  public static List<Map<String, Map<String, Object>>> buildDimension(List<List<SingleDimension>> singleDimensions) {
-    List<Map<String, Map<String, Object>>> dimensionList = new ArrayList<>();
+  public static List<Map<String, Object>> buildDimension(List<List<SingleDimension>> singleDimensions) {
+    List<Map<String, Object>> dimensionList = new ArrayList<>();
     for (List<SingleDimension> list : singleDimensions) {
-      Map<String, Map<String, Object>> dimensions = getEmptyDimensionsMap();
+      Map<String, Object> dimensions = getEmptyDimensionsMap();
       for (SingleDimension item : list) {
         if (item.getValue() != null) {
-          Map<String, Object> single = dimensions.get(item.getAccessDimension().getName());
-          single.put(item.getKey(), item.getValue());
+          Object single = dimensions.get(item.getAccessDimension().getName());
+          Map<String, Object> map = (Map<String, Object>) single;
+          map.put(item.getKey(), item.getValue());
         }
       }
       dimensionList.add(dimensions);
@@ -92,8 +93,8 @@ public class DimensionMockUtility {
     return dimensionList;
   }
 
-  public static Map<String, Map<String, Object>> getEmptyDimensionsMap() {
-    Map<String, Map<String, Object>> dimensions = new HashMap<>();
+  public static Map<String, Object> getEmptyDimensionsMap() {
+    Map<String, Object> dimensions = new HashMap<>();
     for (AccessDimension ad : AccessDimension.values()) {
       dimensions.put(ad.getName(), new HashMap<>());
     }

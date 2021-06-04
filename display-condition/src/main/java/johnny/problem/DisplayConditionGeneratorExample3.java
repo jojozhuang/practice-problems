@@ -1,6 +1,7 @@
 package johnny.problem;
 
 import java.util.List;
+import java.util.Map;
 
 public class DisplayConditionGeneratorExample3 {
     public static void main(String[] args) {
@@ -21,5 +22,18 @@ public class DisplayConditionGeneratorExample3 {
 
         List<List<SingleDimension>> result = DisplayConditionGenerator3.combine(new SimpleCondition[]{condition1, condition2, condition3});
         result.forEach(System.out::println);
+
+        /*
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=true}, permissions={Inventory_Collaboration_Visibility=true, Buyer_Forecast_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=true}, permissions={Buyer_Forecast_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=true}, permissions={Inventory_Collaboration_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=true}, permissions={}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=false}, permissions={Inventory_Collaboration_Visibility=true, Buyer_Forecast_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=false}, permissions={Buyer_Forecast_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=false}, permissions={Inventory_Collaboration_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=false}, permissions={}, orgEntitlements={}, userTypes={}, featureToggles={}}
+        */
+        List<Map<String, Object>> dimensionList = DimensionMockUtility2.buildDimension(result);
+        dimensionList.forEach(System.out::println);
     }
 }
