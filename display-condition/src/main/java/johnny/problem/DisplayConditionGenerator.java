@@ -9,7 +9,7 @@ public class DisplayConditionGenerator {
         List<List<String>> ans = new ArrayList<>();
 
         List<String> list = new ArrayList<>();
-        dfs(keys.length, 1, keys, list, ans);
+        dfs(keys.length, 0, keys, list, ans);
 
         return ans;
     }
@@ -20,8 +20,11 @@ public class DisplayConditionGenerator {
             return;
         }
 
-        for(int i = pos; i <= n; i++) {
-            list.add(keys[i]);
+        for(int i = pos; i < n; i++) {
+            list.add(keys[i] + "0");
+            dfs(n, i + 1, keys, list, ans);
+            list.remove(list.size() - 1);
+            list.add(keys[i] + "1");
             dfs(n, i + 1, keys, list, ans);
             list.remove(list.size() - 1);
         }
