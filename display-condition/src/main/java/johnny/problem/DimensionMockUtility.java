@@ -77,11 +77,11 @@ public class DimensionMockUtility {
     return new SimpleCondition(accessDimension, key);
   }
 
-  public static List<Map<String, Map<String, Object>>> buildDimension(List<List<SingleDimension>> singleDimensions) {
+  public static List<Map<String, Map<String, Object>>> buildDimension(List<List<SimpleCondition>> singleDimensions) {
     List<Map<String, Map<String, Object>>> dimensionList = new ArrayList<>();
-    for (List<SingleDimension> list : singleDimensions) {
+    for (List<SimpleCondition> list : singleDimensions) {
       Map<String, Map<String, Object>> dimensions = getEmptyDimensionsMap();
-      for (SingleDimension item : list) {
+      for (SimpleCondition item : list) {
         if (item.getValue() != null) {
           Map<String, Object> single = dimensions.get(item.getAccessDimension().getName());
           single.put(item.getKey(), item.getValue());

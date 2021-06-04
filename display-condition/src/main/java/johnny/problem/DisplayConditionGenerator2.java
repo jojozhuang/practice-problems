@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DisplayConditionGenerator2 {
 
-    public static List<List<String>> combine(SimpleCondition[] conditions) {
+    public static List<List<String>> getDimensionCombinations(List<SimpleCondition> conditions) {
         List<List<String>> ans = new ArrayList<>();
 
         List<String> list = new ArrayList<>();
@@ -14,18 +14,19 @@ public class DisplayConditionGenerator2 {
         return ans;
     }
 
-    private static void dfs(int pos, SimpleCondition[] conditions, List<String> list, List<List<String>> ans) {
-        if (list.size() == conditions.length) {
+    private static void dfs(int pos, List<SimpleCondition> conditions, List<String> list, List<List<String>> ans) {
+        if (list.size() == conditions.size()) {
             ans.add(new ArrayList<>(list));
             return;
         }
 
-        for (int i = pos; i < conditions.length; i++) {
-            list.add(conditions[i].getKey() + '_' + conditions[i].getAccessDimension().getPositiveValue());
+        for (int i = pos; i < conditions.size(); i++) {
+            SimpleCondition condition = conditions.get(i);
+            list.add(condition.getKey() + '_' + condition.getAccessDimension().getPositiveValue());
             dfs(i + 1, conditions, list, ans);
             list.remove(list.size() - 1);
 
-            list.add(conditions[i].getKey() + '_' + conditions[i].getAccessDimension().getNegativeValue());
+            list.add(condition.getKey() + '_' + condition.getAccessDimension().getNegativeValue());
             dfs(i + 1, conditions, list, ans);
             list.remove(list.size() - 1);
         }

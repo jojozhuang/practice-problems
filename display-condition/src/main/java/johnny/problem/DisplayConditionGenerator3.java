@@ -5,27 +5,28 @@ import java.util.List;
 
 public class DisplayConditionGenerator3 {
 
-    public static List<List<SingleDimension>> combine(SimpleCondition[] conditions) {
-        List<List<SingleDimension>> ans = new ArrayList<>();
+    public static List<List<SimpleCondition>> getDimensionCombinations(List<SimpleCondition> conditions) {
+        List<List<SimpleCondition>> ans = new ArrayList<>();
 
-        List<SingleDimension> list = new ArrayList<>();
+        List<SimpleCondition> list = new ArrayList<>();
         dfs(0, conditions, list, ans);
 
         return ans;
     }
 
-    private static void dfs(int pos, SimpleCondition[] conditions, List<SingleDimension> list, List<List<SingleDimension>> ans) {
-        if (list.size() == conditions.length) {
+    private static void dfs(int pos, List<SimpleCondition> conditions, List<SimpleCondition> list, List<List<SimpleCondition>> ans) {
+        if (list.size() == conditions.size()) {
             ans.add(new ArrayList<>(list));
             return;
         }
 
-        for (int i = pos; i < conditions.length; i++) {
-            list.add(new SingleDimension(conditions[i].getAccessDimension(), conditions[i].getKey(), conditions[i].getAccessDimension().getPositiveValue()));
+        for (int i = pos; i < conditions.size(); i++) {
+            SimpleCondition condition = conditions.get(i);
+            list.add(new SimpleCondition(condition.getAccessDimension(), condition.getKey(), condition.getAccessDimension().getPositiveValue()));
             dfs(i + 1, conditions, list, ans);
             list.remove(list.size() - 1);
 
-            list.add(new SingleDimension(conditions[i].getAccessDimension(), conditions[i].getKey(), conditions[i].getAccessDimension().getNegativeValue()));
+            list.add(new SimpleCondition(condition.getAccessDimension(), condition.getKey(), condition.getAccessDimension().getNegativeValue()));
             dfs(i + 1, conditions, list, ans);
             list.remove(list.size() - 1);
         }

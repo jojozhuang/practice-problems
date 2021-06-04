@@ -20,7 +20,7 @@ public class DisplayConditionGeneratorExample3 {
         SimpleCondition condition2 = new SimpleCondition(AccessDimension.PERMISSIONS, "Buyer_Forecast_Visibility");
         SimpleCondition condition3 = new SimpleCondition(AccessDimension.PERMISSIONS, "Inventory_Collaboration_Visibility");
 
-        List<List<SingleDimension>> result = DisplayConditionGenerator3.combine(new SimpleCondition[]{condition1, condition2, condition3});
+        List<List<SimpleCondition>> result = DisplayConditionGenerator3.getDimensionCombinations(List.of(condition1, condition2, condition3));
         result.forEach(System.out::println);
 
         /*
