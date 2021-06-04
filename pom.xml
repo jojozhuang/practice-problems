@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>custom-list</module>
+        <module>display-condition</module>
         <module>image-cache</module>
         <module>key-value-store</module>
         <module>number-base</module>

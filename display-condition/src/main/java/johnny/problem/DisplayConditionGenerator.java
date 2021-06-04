@@ -9,23 +9,23 @@ public class DisplayConditionGenerator {
         List<List<String>> ans = new ArrayList<>();
 
         List<String> list = new ArrayList<>();
-        dfs(keys.length, 0, keys, list, ans);
+        dfs(0, keys, list, ans);
 
         return ans;
     }
 
-    private static void dfs(int n, int pos, String[] keys, List<String> list, List<List<String>> ans) {
-        if (list.size() == n) {
+    private static void dfs(int pos, String[] keys, List<String> list, List<List<String>> ans) {
+        if (list.size() == keys.length) {
             ans.add(new ArrayList<>(list));
             return;
         }
 
-        for(int i = pos; i < n; i++) {
+        for(int i = pos; i < keys.length; i++) {
             list.add(keys[i] + "0");
-            dfs(n, i + 1, keys, list, ans);
+            dfs(i + 1, keys, list, ans);
             list.remove(list.size() - 1);
             list.add(keys[i] + "1");
-            dfs(n, i + 1, keys, list, ans);
+            dfs(i + 1, keys, list, ans);
             list.remove(list.size() - 1);
         }
     }
