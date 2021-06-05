@@ -16,11 +16,11 @@ public class DisplayConditionGeneratorExample3 {
         [scc_false, Buyer_Forecast_Visibility_null, Inventory_Collaboration_Visibility_true]
         [scc_false, Buyer_Forecast_Visibility_null, Inventory_Collaboration_Visibility_null]
         */
-        SimpleCondition condition1 = new SimpleCondition(AccessDimension.ORG_PARAMETERS, "scc");
-        SimpleCondition condition2 = new SimpleCondition(AccessDimension.PERMISSIONS, "Buyer_Forecast_Visibility");
-        SimpleCondition condition3 = new SimpleCondition(AccessDimension.PERMISSIONS, "Inventory_Collaboration_Visibility");
+        DisplayCondition condition1 = new DisplayCondition(DimensionType.ORG_PARAMETERS, "scc");
+        DisplayCondition condition2 = new DisplayCondition(DimensionType.PERMISSIONS, "Buyer_Forecast_Visibility");
+        DisplayCondition condition3 = new DisplayCondition(DimensionType.PERMISSIONS, "Inventory_Collaboration_Visibility");
 
-        List<List<SimpleCondition>> result = DisplayConditionGenerator3.getDimensionCombinations(List.of(condition1, condition2, condition3));
+        List<List<DisplayCondition>> result = DisplayConditionGenerator3.getDimensionCombinations(List.of(condition1, condition2, condition3));
         result.forEach(System.out::println);
 
         /*

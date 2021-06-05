@@ -12,12 +12,12 @@ public class DisplayConditionGeneratorExample4 {
         [scc_true, Buyer_Forecast_Visibility_true, buyersAllowForecastCollaboration_true, buyersAllowForecastView_null]
         [scc_true, Buyer_Forecast_Visibility_true, buyersAllowForecastCollaboration_true, buyersAllowForecastView_true]
         */
-        SimpleCondition condition1 = new SimpleCondition(AccessDimension.ORG_PARAMETERS, "scc", true);
-        SimpleCondition condition2 = new SimpleCondition(AccessDimension.PERMISSIONS, "Buyer_Forecast_Visibility", true);
-        SimpleCondition condition3 = new SimpleCondition(AccessDimension.PERMISSIONS, "buyersAllowForecastCollaboration");
-        SimpleCondition condition4 = new SimpleCondition(AccessDimension.PERMISSIONS, "buyersAllowForecastView");
+        DisplayCondition condition1 = new DisplayCondition(DimensionType.ORG_PARAMETERS, "scc", true);
+        DisplayCondition condition2 = new DisplayCondition(DimensionType.PERMISSIONS, "Buyer_Forecast_Visibility", true);
+        DisplayCondition condition3 = new DisplayCondition(DimensionType.PERMISSIONS, "buyersAllowForecastCollaboration");
+        DisplayCondition condition4 = new DisplayCondition(DimensionType.PERMISSIONS, "buyersAllowForecastView");
 
-        List<List<SimpleCondition>> result = DisplayConditionGenerator4.getDimensionCombinations(List.of(condition1, condition2, condition3, condition4));
+        List<List<DisplayCondition>> result = DisplayConditionGenerator4.getDimensionCombinations(List.of(condition1, condition2, condition3, condition4));
         result.forEach(System.out::println);
 
         /*
@@ -28,5 +28,14 @@ public class DisplayConditionGeneratorExample4 {
         */
         List<Map<String, Object>> dimensionList = DimensionMockUtility2.buildDimension(result);
         dimensionList.forEach(System.out::println);
+
+        List<Boolean> expected = DimensionMockUtility2.getExpected("000111");
+        System.out.println(expected);
+
+        List<Boolean> expected2 = DimensionMockUtility2.getPositiveExpected(8);
+        System.out.println(expected2);
+
+        List<Boolean> expected3 = DimensionMockUtility2.getNegativeExpected(8);
+        System.out.println(expected3);
     }
 }

@@ -1,8 +1,8 @@
 package johnny.problem;
 
-public enum AccessDimension {
+public enum DimensionType {
   FEATURE_TOGGLES("featureToggles", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
-  ORG_ENTITLEMENTS("orgEntitlements", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
+  ORG_ENTITLEMENTS("orgEntitlements", ValueType.STRING_VALUE, ValueType.STRING_VALUE),
   ORG_PARAMETERS("orgParameters", ValueType.TRUE_VALUE, ValueType.FALSE_VALUE),
   ORG_TYPES("orgTypes", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
   PERMISSIONS("permissions", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
@@ -13,7 +13,7 @@ public enum AccessDimension {
   private ValueType positiveType;
   private ValueType negativeType;
 
-  AccessDimension(String name, ValueType positiveType, ValueType negativeType) {
+  DimensionType(String name, ValueType positiveType, ValueType negativeType) {
     this.name = name;
     this.positiveType = positiveType;
     this.negativeType = negativeType;
@@ -36,7 +36,7 @@ public enum AccessDimension {
       case TRUE_VALUE:
         return Boolean.TRUE;
       case STRING_VALUE:
-        return "stringValue";
+        return "true";
       default:
         return null;
     }
@@ -47,7 +47,7 @@ public enum AccessDimension {
       case FALSE_VALUE:
         return Boolean.FALSE;
       case STRING_VALUE:
-        return "stringValue";
+        return "false";
       default:
         return null;
     }
