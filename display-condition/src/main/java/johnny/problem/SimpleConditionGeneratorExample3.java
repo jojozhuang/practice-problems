@@ -3,7 +3,7 @@ package johnny.problem;
 import java.util.List;
 import java.util.Map;
 
-public class DisplayConditionGeneratorExample3 {
+public class SimpleConditionGeneratorExample3 {
     public static void main(String[] args) {
         System.out.println("Create 2 dimensions with 1 conditions");
         /*
@@ -16,11 +16,11 @@ public class DisplayConditionGeneratorExample3 {
         [scc_false, Buyer_Forecast_Visibility_null, Inventory_Collaboration_Visibility_true]
         [scc_false, Buyer_Forecast_Visibility_null, Inventory_Collaboration_Visibility_null]
         */
-        DisplayCondition condition1 = new DisplayCondition(DimensionType.ORG_PARAMETERS, "scc");
-        DisplayCondition condition2 = new DisplayCondition(DimensionType.PERMISSIONS, "Buyer_Forecast_Visibility");
-        DisplayCondition condition3 = new DisplayCondition(DimensionType.PERMISSIONS, "Inventory_Collaboration_Visibility");
+        SimpleCondition condition1 = new SimpleCondition(DimensionType.ORG_PARAMETERS, "scc");
+        SimpleCondition condition2 = new SimpleCondition(DimensionType.PERMISSIONS, "Buyer_Forecast_Visibility");
+        SimpleCondition condition3 = new SimpleCondition(DimensionType.PERMISSIONS, "Inventory_Collaboration_Visibility");
 
-        List<List<DisplayCondition>> result = DisplayConditionGenerator3.getDimensionCombinations(List.of(condition1, condition2, condition3));
+        List<List<SimpleCondition>> result = SimpleConditionGenerator3.getDimensionCombinations(List.of(condition1, condition2, condition3));
         result.forEach(System.out::println);
 
         /*
@@ -33,7 +33,7 @@ public class DisplayConditionGeneratorExample3 {
         {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=false}, permissions={Inventory_Collaboration_Visibility=true}, orgEntitlements={}, userTypes={}, featureToggles={}}
         {serviceSubscriptions={}, orgTypes={}, orgParameters={scc=false}, permissions={}, orgEntitlements={}, userTypes={}, featureToggles={}}
         */
-        List<Map<String, Object>> dimensionList = DimensionMockUtility2.buildDimension(result);
+        List<Map<String, Object>> dimensionList = DimensionUtility2.buildDimension(result);
         dimensionList.forEach(System.out::println);
     }
 }

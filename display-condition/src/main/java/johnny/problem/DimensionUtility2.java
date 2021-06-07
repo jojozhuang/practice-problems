@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class DimensionMockUtility2 {
+public class DimensionUtility2 {
   public static Map<String, Object> getPositiveDimension(DimensionType ad, String key) {
     return getPositiveDimensionsForAnd(ad, List.of(key));
   }
@@ -27,7 +27,7 @@ public class DimensionMockUtility2 {
 
   public static Map<String, Object> getDimensionsForAnd(DimensionType ad, List<String> keys, Object value) {
     Map<String, Object> dimensions = getEmptyDimensions();
-    dimensions.put(ad.getName(), buildDimensionList(keys, value));
+    dimensions.put(ad.getDimensionKey(), buildDimensionList(keys, value));
     return dimensions;
   }
 
@@ -35,7 +35,7 @@ public class DimensionMockUtility2 {
     List<Map<String, Object>> dimensionList = new ArrayList<>();
     for (String key : keys) {
       Map<String, Object> dimensions = getEmptyDimensions();
-      dimensions.put(ad.getName(),  buildDimensionValue(key, true));
+      dimensions.put(ad.getDimensionKey(),  buildDimensionValue(key, true));
       dimensionList.add(dimensions);
     }
     return dimensionList;
@@ -44,7 +44,7 @@ public class DimensionMockUtility2 {
   public static Map<String, Object> getEmptyDimensions() {
     Map<String, Object> dimensions = new HashMap<>();
     for (DimensionType ad : DimensionType.values()) {
-      dimensions.put(ad.getName(), Collections.emptyMap());
+      dimensions.put(ad.getDimensionKey(), Collections.emptyMap());
     }
 
     return dimensions;
@@ -54,7 +54,7 @@ public class DimensionMockUtility2 {
     Map<String, Object> dimensions = new HashMap<>();
     Map<String, Object> dimension = new HashMap<>();
     keys.forEach(key -> dimension.put(key, value));
-    dimensions.put(ac.getName(), dimension);
+    dimensions.put(ac.getDimensionKey(), dimension);
     return dimensions;
   }
 
@@ -71,21 +71,21 @@ public class DimensionMockUtility2 {
     return dimension;
   }
 
-  public static DisplayCondition getOrgParameterCondition(String key) {
-    return new DisplayCondition(DimensionType.ORG_PARAMETERS, key);
+  public static SimpleCondition getOrgParameterCondition(String key) {
+    return new SimpleCondition(DimensionType.ORG_PARAMETERS, key);
   }
 
-  public static DisplayCondition getSimpleCondition(DimensionType accessDimension, String key) {
-    return new DisplayCondition(accessDimension, key);
+  public static SimpleCondition getSimpleCondition(DimensionType accessDimension, String key) {
+    return new SimpleCondition(accessDimension, key);
   }
 
-  public static List<Map<String, Object>> buildDimension(List<List<DisplayCondition>> singleDimensions) {
+  public static List<Map<String, Object>> buildDimension(List<List<SimpleCondition>> singleDimensions) {
     List<Map<String, Object>> dimensionList = new ArrayList<>();
-    for (List<DisplayCondition> list : singleDimensions) {
+    for (List<SimpleCondition> list : singleDimensions) {
       Map<String, Object> dimensions = getEmptyDimensionsMap();
-      for (DisplayCondition item : list) {
+      for (SimpleCondition item : list) {
         if (item.getValue() != null) {
-          Object single = dimensions.get(item.getDimensionType().getName());
+          Object single = dimensions.get(item.getDimensionType().getDimensionKey());
           Map<String, Object> map = (Map<String, Object>) single;
           map.put(item.getKey(), item.getValue());
         }
@@ -98,7 +98,7 @@ public class DimensionMockUtility2 {
   public static Map<String, Object> getEmptyDimensionsMap() {
     Map<String, Object> dimensions = new HashMap<>();
     for (DimensionType ad : DimensionType.values()) {
-      dimensions.put(ad.getName(), new HashMap<>());
+      dimensions.put(ad.getDimensionKey(), new HashMap<>());
     }
 
     return dimensions;

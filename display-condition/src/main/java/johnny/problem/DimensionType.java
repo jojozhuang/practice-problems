@@ -1,26 +1,26 @@
 package johnny.problem;
 
 public enum DimensionType {
-  FEATURE_TOGGLES("featureToggles", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
-  ORG_ENTITLEMENTS("orgEntitlements", ValueType.STRING_VALUE, ValueType.STRING_VALUE),
-  ORG_PARAMETERS("orgParameters", ValueType.TRUE_VALUE, ValueType.FALSE_VALUE),
-  ORG_TYPES("orgTypes", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
-  PERMISSIONS("permissions", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
-  SERVICE_SUBSCRIPTIONS("serviceSubscriptions", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE),
-  USER_TYPES("userTypes", ValueType.TRUE_VALUE, ValueType.EMPTY_VALUE);
+  FEATURE_TOGGLES("featureToggles", ValueType.TRUE, ValueType.EMPTY),
+  ORG_ENTITLEMENTS("orgEntitlements", ValueType.STRING, ValueType.STRING),
+  ORG_PARAMETERS("orgParameters", ValueType.TRUE, ValueType.FALSE),
+  ORG_TYPES("orgTypes", ValueType.TRUE, ValueType.EMPTY),
+  PERMISSIONS("permissions", ValueType.TRUE, ValueType.EMPTY),
+  SERVICE_SUBSCRIPTIONS("serviceSubscriptions", ValueType.TRUE, ValueType.EMPTY),
+  USER_TYPES("userTypes", ValueType.TRUE, ValueType.EMPTY);
 
-  private String name;
+  private String dimensionKey;
   private ValueType positiveType;
   private ValueType negativeType;
 
-  DimensionType(String name, ValueType positiveType, ValueType negativeType) {
-    this.name = name;
+  DimensionType(String dimensionKey, ValueType positiveType, ValueType negativeType) {
+    this.dimensionKey = dimensionKey;
     this.positiveType = positiveType;
     this.negativeType = negativeType;
   }
 
-  public String getName() {
-    return name;
+  public String getDimensionKey() {
+    return dimensionKey;
   }
 
   public ValueType getPositiveType() {
@@ -32,10 +32,10 @@ public enum DimensionType {
   }
 
   public Object getPositiveValue() {
-    switch(this.positiveType) {
-      case TRUE_VALUE:
+    switch (this.positiveType) {
+      case TRUE:
         return Boolean.TRUE;
-      case STRING_VALUE:
+      case STRING:
         return "true";
       default:
         return null;
@@ -43,10 +43,10 @@ public enum DimensionType {
   }
 
   public Object getNegativeValue() {
-    switch(this.negativeType) {
-      case FALSE_VALUE:
+    switch (this.negativeType) {
+      case FALSE:
         return Boolean.FALSE;
-      case STRING_VALUE:
+      case STRING:
         return "false";
       default:
         return null;

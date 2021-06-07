@@ -3,7 +3,7 @@ package johnny.problem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisplayConditionGenerator {
+public class SimpleConditionGenerator {
 
     public static List<List<String>> getDimensionCombinations(List<String> keys) {
         List<List<String>> ans = new ArrayList<>();
