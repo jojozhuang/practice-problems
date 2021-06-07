@@ -153,4 +153,27 @@ public class DimensionUtility3 {
     }
     return dimensionList;
   }
+
+  public static boolean parseBoolExpr(String expression) {
+    if (expression.equals("t")) return true;
+    if (expression.equals("f")) return false;
+    char[] arr = expression.toCharArray();
+    char op = arr[0];
+    boolean result = op != '|';
+    int count = 0;
+    for (int i = 1, pre = 2; i < arr.length; i++) {
+      char c = arr[i];
+      if (c == '(') count++;
+      if (c == ')') count--;
+      if (c == ',' && count == 1 || c == ')' && count == 0) {
+        boolean next = parseBoolExpr(expression.substring(pre, i));
+        pre = i + 1;
+        if (op == '|') result |= next;
+        else if (op == '&') result &= next;
+        else result = !next;
+      }
+    }
+    System.out.println(result);
+    return result;
+  }
 }
