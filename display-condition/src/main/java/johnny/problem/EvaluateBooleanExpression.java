@@ -1,11 +1,35 @@
 package johnny.problem;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+import java.util.stream.Collectors;
 
 public class EvaluateBooleanExpression {
+    private static final String VALID_CHARS = ",()!&|";
+    private static final String VALID_DIMENSIONS = "abcdefghijklmnopqrstuvwxyz";
+    private static final Set<Character> LETTERS_SET;
+    private static final Set<Character> WHITE_SET;
+
+    static {
+        List<Character> letters = VALID_DIMENSIONS
+                .chars()
+                .mapToObj(ch -> (char) ch)
+                .collect(Collectors.toList());
+        List<Character> validChars = VALID_CHARS.concat(VALID_DIMENSIONS)
+                .chars()
+                .mapToObj(ch -> (char) ch)
+                .collect(Collectors.toList());
+        LETTERS_SET = new HashSet<>(letters);
+        WHITE_SET = new HashSet<>(validChars);
+    }
+
     public boolean evaluate(String expression) {
         if (expression.equals("t")) return true;
         if (expression.equals("f")) return false;
@@ -62,8 +86,82 @@ public class EvaluateBooleanExpression {
                     result = !next;
                 }
             }
+            if (op == '&' && result == false ||
+                op == '|' && result == true) {
+                break;
+            }
         }
         return result;
+    }
+
+    public boolean validateExpression(String expression) {
+        if (expression == null || expression.isEmpty()) {
+            throw new IllegalArgumentException(
+                    String.format("Expression %s is empty.", expression));
+        }
+
+        final int even = 2;
+        Deque<Character> deque = new ArrayDeque<>();
+        char[] arr = expression.toCharArray();
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            char ch = arr[i];
+            if (!WHITE_SET.contains(ch)) {
+                throw new IllegalArgumentException(
+                        String.format("Expression %s contains invalid characters, must be [%s] or [%s]",
+                                expression, VALID_DIMENSIONS, VALID_CHARS));
+            }
+            if (ch == '(') {
+                if (deque.isEmpty()) {
+                    return false;
+                } else {
+                    char top = deque.peek();
+                    if (top != '!' && top != '&' && top != '|') {
+                        return false;
+                    }
+                }
+                count++;
+                deque.push(ch);
+            } else if (ch == ')') {
+                if (count < 1) {
+                    return false;
+                }
+                List<Character> conditionList = new ArrayList<>();
+                while (deque.peek() != '(') {
+                    conditionList.add(deque.pop());
+                }
+                deque.pop(); // left parenthesis
+                char op = deque.pop();
+                if (op == '!' && (conditionList.size() != 1 || !LETTERS_SET.contains(conditionList.get(0)))) {
+                    return false;
+                }
+                if (conditionList.size() % even == 0) {
+                    return false;
+                }
+                for (int j = 0; j < conditionList.size(); j++) {
+                    if (j % even == 0 && !LETTERS_SET.contains(conditionList.get(j))) {
+                        return false;
+                    } else if (j % even != 0 && conditionList.get(j) != ',') {
+                        return false;
+                    }
+                }
+                deque.push('a');
+                count--;
+            } else {
+                deque.push(ch);
+            }
+        }
+
+        return deque.size() == 1 && LETTERS_SET.contains(deque.peek());
+    }
+
+    public List<Boolean> getExpected(String expression) {
+        List<Map<Character, Boolean>> combinations = getCombinations(getUniqueDimension(expression));
+        List<Boolean> expected = new ArrayList<>();
+        for (Map<Character, Boolean> map : combinations) {
+            expected.add(evaluateCondition(expression, map));
+        }
+        return expected;
     }
 
     public List<Map<Character, Boolean>> getCombinations(String condition) {
@@ -123,5 +221,23 @@ public class EvaluateBooleanExpression {
             }
         }
         return result;
+    }
+
+    public String getUniqueDimension(String expression) {
+        List<Character> list = List.of('(', ')', ',', '!', '|', '&');
+        Set<Character> blackList = new HashSet<>(list);
+        Set<Character> set = new HashSet<>();
+        for (char c : expression.toCharArray()) {
+            if (!blackList.contains(c)) {
+                set.add(c);
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Character c : set) {
+            sb.append(c);
+        }
+
+        return sb.toString();
     }
 }
